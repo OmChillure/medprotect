@@ -3,8 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "./ui/buttons";
 import { useRouter } from "next/navigation";
-import Logo from "../../public/logo.png";
-import { Menu } from "lucide-react";
+import Logo from "../public/logo.png";
+import Menu from "./Dropdown";
 
 const scrolltoHash = function (element_id: string) {
   const element = document.getElementById(element_id);
@@ -14,9 +14,10 @@ const scrolltoHash = function (element_id: string) {
     inline: "nearest",
   });
 };
+
 export default function Header() {
   return (
-    <nav className="sticky  top-0 z-50 w-full border-b bg-white border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav className="stick top-0 z-50 w-full border-b bg-white border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container h-20 relative">
         <div className="flex h-full items-center justify-between">
           <Link href="/">
@@ -26,15 +27,13 @@ export default function Header() {
             <Link href={"/"}>
               <p>Home</p>
             </Link>
+            <Menu />
             <Link href={"/"}>
             {/* onClick={() => scrolltoHash("product")}> */}
-              <p>About</p>
+              <p>About Us</p>
             </Link>
-            <Link href={"/"}>
+            <Link href={"/api/python"}>
               <p>Fundraising</p>
-            </Link>
-            <Link href={"/"}>
-              <p>Detect</p>
             </Link>
             <Link href={"/api/python"}>
               <p>Test</p>
